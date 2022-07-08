@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import url(font.css);
+
+/* 초기화 */
+html {overflow-y:auto; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -o-text-size-adjust: none;}
+body {margin:0;padding:0;min-width:320px;font-size:16px;line-height:1.267em;height:100%;font-family:'Noto Sans KR', 'Noto Serif KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif; letter-spacing:-0.4px;background:#fff;color:#666;}
+html{font-family:'Noto Sans KR', 'Noto Serif KR';}
+html, h1, h2, h3, h4, h5, h6, form, fieldset {margin:0;padding:0;border:0;}
+h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:'Noto Sans KR', 'Noto Serif KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+header ul, nav ul, footer ul {margin:0;padding:0;list-style:none}
+legend {position:absolute;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select {vertical-align:middle}
+input, button {margin:0;padding:0;font-size:1em;font-family:'Noto Sans KR', 'Noto Serif KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif;}
+button,input[type=submit] {cursor:pointer}
+input[type=text], input[type=password], input[type=submit], input[type=image], button {-webkit-appearance:none}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"], button {-webkit-appearance:none;cursor:pointer;padding:0}
+textarea, select {font-size:1em;font-family:'Noto Sans KR', 'Noto Serif KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif;}
+textarea {border-radius:0;-webkit-appearance:none}
+p {margin:0;padding:0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a:link, a:visited {text-decoration:none}
+ul,li,dl,dt,dd {padding:0;margin:0}
+ul {list-style:none}
+* {padding: 0;margin: 0;}
+*::placeholder {
+    color:#aaa !important;
+}
+*, *:before, *:after {box-sizing:border-box;outline:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}
+*,:after,:before {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+input[type=text],input[type=password], textarea {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out;-ms-transition:all 0.30s ease-in-out;-o-transition:all 0.30s ease-in-out;outline:none}
+
