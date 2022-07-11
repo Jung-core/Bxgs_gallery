@@ -33,7 +33,7 @@ function headerFunc(){
         $('body').addClass('scr-down');
     }
 
-    $(window).on('mousewheel DOMMouseScroll scroll', function(e){
+    $(window).on('mousewheel DOMMouseScroll', function(e){
         var E = e.originalEvent;
         delta = 0;
         if (E.detail) {
