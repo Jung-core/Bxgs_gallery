@@ -329,6 +329,7 @@ address span + span:after{content:'';position:absolute;left:-15px;top:8px;width:
 @media screen and (max-width:1440px){
 	.logo{width:110px;height:34px;background-size:100%;}
 	.search>a{right:20px;top:25px;}
+	.scr-down header {top:-70px;}
 	header{height:70px;}
 	header>.sitemap-wrap>a{left:20px;top:29px;}
 	.sitemap-logo>a{width: 110px;height: 34px;background-size: 100%;}
