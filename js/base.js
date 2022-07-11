@@ -7,7 +7,7 @@ $(function(){
     // document.createElement('article');
     // document.createElement('main');
     loadAos()
-    headerFunc()
+    // headerFunc()
     familySiteFunc()
     allSearchFunc()
     sitemapFunc()
@@ -22,48 +22,85 @@ $(function(){
 });
 
 
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
 
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('body').removeClass('scr-up').addClass('scr-down');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('body').removeClass('scr-down').addClass('scr-up');
+        }
+    }
+    
+    lastScrollTop = st;
+}
 
 /*===== HEADER FUNCTION ===== */
-function headerFunc(){  
-    if($(window).scrollTop() <= 50) {
-        $('body').removeClass('scr-up');
-        $('body').removeClass('scr-down');
-    }else{
-        $('body').addClass('scr-down');
-    }
+// function headerFunc(){  
+//     if($(window).scrollTop() <= 50) {
+//         $('body').removeClass('scr-up');
+//         $('body').removeClass('scr-down');
+//     }else{
+//         $('body').addClass('scr-down');
+//     }
 
-    $(window).on('mousewheel DOMMouseScroll', function(e){
-        var E = e.originalEvent;
-        delta = 0;
-        if (E.detail) {
-            delta = E.detail * -40;
-        }else{
-            delta = E.wheelDelta;
-        }
+//     $(window).on('mousewheel DOMMouseScroll', function(e){
+//         var E = e.originalEvent;
+//         delta = 0;
+//         if (E.detail) {
+//             delta = E.detail * -40;
+//         }else{
+//             delta = E.wheelDelta;
+//         }
 
-        if(delta < 0 && $(window).scrollTop() > 50) {
-            if(!$('body').hasClass('scr-down')) {
-                $('body').addClass('scr-down');
-                $('body').removeClass('scr-up');
-            } 
-        }
-        if(delta > 0 && $(window).scrollTop() > 50) {
-            if(!$('body').hasClass('scr-up')) {
-                $('body').addClass('scr-up');
-                $('body').removeClass('scr-down');
-            }
-        }
-        if($(window).scrollTop() <= 50) {
-            if($('body').hasClass('scr-up')) {
-                $('body').removeClass('scr-up');
-            }
-            if($('body').hasClass('scr-down')) {
-                $('body').removeClass('scr-down');
-            }
-        }
-    });   
-}
+//         if(delta < 0 && $(window).scrollTop() > 50) {
+//             if(!$('body').hasClass('scr-down')) {
+//                 $('body').addClass('scr-down');
+//                 $('body').removeClass('scr-up');
+//             } 
+//         }
+//         if(delta > 0 && $(window).scrollTop() > 50) {
+//             if(!$('body').hasClass('scr-up')) {
+//                 $('body').addClass('scr-up');
+//                 $('body').removeClass('scr-down');
+//             }
+//         }
+//         if($(window).scrollTop() <= 50) {
+//             if($('body').hasClass('scr-up')) {
+//                 $('body').removeClass('scr-up');
+//             }
+//             if($('body').hasClass('scr-down')) {
+//                 $('body').removeClass('scr-down');
+//             }
+//         }
+//     });   
+// }
 
 
 
